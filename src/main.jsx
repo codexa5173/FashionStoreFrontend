@@ -34,9 +34,9 @@ function ServerSplash({ children }) {
   return (
     <div style={{ minHeight: "100vh", display: "grid", placeItems: "center", padding: 24, background: "#fffaf0" }}>
       <div style={{ width: "100%", maxWidth: 380, textAlign: "center" }}>
-        <div style={{ fontSize: 64 }}>🧸</div>
-        <h1 style={{ margin: "16px 0 6px", fontSize: 30, fontWeight: 900 }}>JD COLLECTION</h1>
-        <p style={{ margin: 0, color: "#64748b" }}>Starting JD COLLECTION...</p>
+        {/* <div style={{ fontSize: 64 }}>🧸</div> */}
+        <h1 style={{ margin: "16px 0 6px", fontSize: 30, fontWeight: 900 }}>Fashion Store</h1>
+        <p style={{ margin: 0, color: "#64748b" }}>Starting Fashion Store...</p>
         <div style={{ height: 8, marginTop: 24, overflow: "hidden", borderRadius: 9999, background: "#e2e8f0" }}>
           <div style={{ width: "40%", height: "100%", borderRadius: 9999, background: "#ffd84d", animation: "jd-collection-loading 1.2s ease-in-out infinite" }} />
         </div>
