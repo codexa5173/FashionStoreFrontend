@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --store-primary: #111827; --store-secondary: #f59e0b; --store-accent: #e11d48; --store-font: Inter; font-family: var(--store-font), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #18212f; background: #fffdf7; }
+body { margin: 0; min-width: 320px; background: #fffdf7; }
+button, input, textarea, select { font: inherit; font-size: 16px !important; }
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid #9a7cff; outline-offset: 2px; }
+.container-app { width: min(1180px, calc(100% - 2rem)); margin-inline: auto; }
+.card { @apply rounded-3xl bg-white shadow-sm ring-1 ring-black/5; }
+.btn { @apply inline-flex items-center justify-center gap-2 rounded-2xl px-4 py-2.5 font-semibold transition active:scale-[.98]; }
+.btn-primary { @apply btn text-white hover:opacity-90; background: var(--store-primary); }
+.btn-yellow { @apply btn text-slate-950 hover:brightness-95; background: var(--store-secondary); }
+.btn-soft { @apply btn bg-slate-100 text-slate-800 hover:bg-slate-200; }
+.badge { @apply inline-flex items-center rounded-full px-2.5 py-1 text-xs font-bold; }
+
+.input { @apply w-full rounded-2xl bg-slate-100 px-4 py-3 text-base ring-1 ring-transparent transition placeholder:text-slate-400 focus:bg-white focus:ring-slate-300; }
+.table-card { @apply overflow-x-auto rounded-3xl bg-white shadow-sm ring-1 ring-black/5; }
+@media (max-width: 640px) {
+  .container-app { width: min(100% - 1rem, 1180px); }
+  .card { border-radius: 1.35rem; }
+  .btn { min-height: 44px; }
+  h1 { letter-spacing: -0.025em; }
+}

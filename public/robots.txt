@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /super-admin
+Disallow: /checkout
+Disallow: /track-order
+Disallow: /register
+Disallow: /login
+Sitemap: /sitemap.xml

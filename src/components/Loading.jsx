@@ -1,0 +1,6 @@
+import { useStore } from "../context/StoreContext";
+export default function Loading({ text = "Curating products for you…" }) {
+ const { store } = useStore();
+ const logo=store?.settings?.branding?.logo?.secureUrl||store?.settings?.logo?.secureUrl||store?.tenant?.logo?.secureUrl;
+ return <div className="grid min-h-[55vh] place-items-center bg-gradient-to-br from-rose-50 via-white to-amber-50 px-4"><div className="w-full max-w-sm text-center"><div className="mx-auto grid h-28 w-28 place-items-center overflow-hidden rounded-[2rem] bg-white p-4 shadow-xl ring-1 ring-black/5">{logo?<img src={logo} alt="Shop logo" className="h-full w-full object-contain"/>:<div className="text-6xl">👗</div>}</div><div className="mx-auto mt-6 h-8 w-8 animate-spin rounded-full border-4 border-slate-200 border-t-rose-500"/><p className="mt-4 text-base font-black text-slate-800">{text}</p><p className="mt-2 text-sm leading-6 text-slate-500">We’re getting the latest styles, collections and offers ready for you.</p><div className="mx-auto mt-4 h-1.5 max-w-[220px] overflow-hidden rounded-full bg-slate-200"><div className="h-full w-1/2 animate-pulse rounded-full bg-rose-400"/></div><p className="mt-3 text-xs font-semibold text-slate-400">Almost there • Fresh fashion is loading</p></div></div>;
+}
