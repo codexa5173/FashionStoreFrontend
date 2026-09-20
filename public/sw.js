@@ -1,5 +1,5 @@
 const CACHE_NAME = "fashion-store-shell-v10";
-const APP_SHELL = ["/", "/manifest.webmanifest", "/icon-192.png", "/icon-512.png", "/offline.html"];
+const APP_SHELL = ["/", "/manifest.webmanifest", "/icon-192n.png", "/icon-512n.png", "/offline.html"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -71,8 +71,8 @@ self.addEventListener("push", (event) => {
     self.registration.showNotification(data.title || "Ladies Fashion Store", {
       body: data.body || "",
       image: data.image,
-      icon: "/icon-192.png",
-      badge: "/icon-192.png",
+      icon: "/icon-192n.png",
+      badge: "/icon-192n.png",
       data: data.data || { url: "/" },
       vibrate: [100, 50, 100]
     })
