@@ -9,7 +9,7 @@ export default function Login(){
   if(admin)return <Navigate to={admin.role==="super_admin"?"/super-admin":(loc.state?.from||"/admin")} replace/>;
   async function submit(x){x.preventDefault();setE("");setBusy(true);try{await login(u,p,superMode?"":tenant)}catch(err){setE(err.response?.data?.message||"Login failed")}finally{setBusy(false)}}
   return <div className="grid min-h-[75vh] place-items-center px-4"><form onSubmit={submit} className="card w-full max-w-md p-8">
-    <div className="text-4xl">{superMode?"🛡️":"🧸"}</div><h1 className="mt-4 text-3xl font-black">{superMode?"SaaS Platform Admin":"JD COLLECTION Admin"}</h1><p className="mt-1 text-slate-500">{superMode?"Manage stores, plans and subscriptions.":"Sign in to manage the product catalogue."}</p>
+    <h1 className="mt-4 text-3xl font-black">{superMode?"SaaS Platform Admin":"Admin"}</h1><p className="mt-1 text-slate-500">{superMode?"Manage stores, plans and subscriptions.":"Sign in to manage the product catalogue."}</p>
     {e&&<div className="mt-5 rounded-xl bg-red-50 p-3 text-sm text-red-700">{e}</div>}
     <label className="mt-6 block text-sm font-bold">Username<input required value={u} onChange={e=>setU(e.target.value)} className="mt-2 w-full rounded-2xl bg-slate-100 p-3"/></label>
     {!superMode&&<label className="mt-4 block text-sm font-bold">Store slug<input value={tenant} onChange={e=>setTenant(e.target.value.toLowerCase())} className="mt-2 w-full rounded-2xl bg-slate-100 p-3" placeholder="your-store" /></label>}
